@@ -6,6 +6,7 @@ import (
 	"github.com/gofiber/helmet"
 	"github.com/thiagopereiramartinez/mordomohub_connect/auth"
 	"github.com/thiagopereiramartinez/mordomohub_connect/fulfillment"
+	"github.com/thiagopereiramartinez/mordomohub_connect/sensors"
 	"os"
 	"strconv"
 )
@@ -24,6 +25,9 @@ func main() {
 
 	// Fulfillment
 	app.Post("/fulfillment", fulfillment.Fulfillment)
+
+	// Sensors
+	app.Get("/sensors", sensors.Sensors)
 
 	// Iniciar serviço
 	port := 8080
