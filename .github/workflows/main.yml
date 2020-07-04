@@ -26,7 +26,7 @@ jobs:
     - name: Generate container image
       run: |
         gcloud builds submit \
-          --tag "us.gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/SERVICE_NAME:$GITHUB_SHA" .
+          --tag "us.gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/$SERVICE_NAME:$GITHUB_SHA" .
            
     - name: Deploy do Cloud Run
       run: |
