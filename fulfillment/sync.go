@@ -30,6 +30,11 @@ func Sync(c *fiber.Ctx, requestId string) {
 		Attributes: map[string]interface{}{
 			"commandOnlyOnOff": true,
 		},
+		OtherDeviceIds: []map[string]interface{}{
+			{
+				"deviceId": "1",
+			},
+		},
 	}
 
 	// Canal 2
@@ -60,6 +65,11 @@ func Sync(c *fiber.Ctx, requestId string) {
 			"queryOnlyHumiditySetting":    true,
 			"queryOnlyTemperatureControl": true,
 			"temperatureUnitForUX":        "C",
+		},
+		OtherDeviceIds: []map[string]interface{}{
+			{
+				"deviceId": "5",
+			},
 		},
 	}
 

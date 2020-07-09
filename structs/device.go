@@ -16,14 +16,15 @@ const (
 
 // SYNC
 type Device struct {
-	Id              string                 `json:"id"`
-	Type            string                 `json:"type"`
-	Traits          []string               `json:"traits"`
-	Name            DeviceName             `json:"name"`
-	WillReportState bool                   `json:"willReportState"`
-	RoomHint        string                 `json:"roomHint"`
-	DeviceInfo      DeviceInfo             `json:"deviceInfo"`
-	Attributes      map[string]interface{} `json:"attributes,omitempty"`
+	Id              string                   `json:"id"`
+	Type            string                   `json:"type"`
+	Traits          []string                 `json:"traits"`
+	Name            DeviceName               `json:"name"`
+	WillReportState bool                     `json:"willReportState"`
+	RoomHint        string                   `json:"roomHint"`
+	DeviceInfo      DeviceInfo               `json:"deviceInfo"`
+	Attributes      map[string]interface{}   `json:"attributes,omitempty"`
+	OtherDeviceIds  []map[string]interface{} `json:"otherDeviceIds"`
 }
 
 type DeviceName struct {
@@ -52,6 +53,11 @@ func (d *Device) Copy(Id string, Name string) Device {
 		RoomHint:        d.RoomHint,
 		DeviceInfo:      d.DeviceInfo,
 		Attributes:      d.Attributes,
+		OtherDeviceIds: []map[string]interface{}{
+			{
+				"deviceId": Id,
+			},
+		},
 	}
 }
 
