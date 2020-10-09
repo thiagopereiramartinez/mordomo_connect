@@ -15,36 +15,38 @@ func Sync(c *fiber.Ctx, requestId string) {
 		SwVersion:    "1.0.0",
 	}
 
-	// Canal 1
-	device_1 := structs.Device{
-		Id:     "1",
-		Type:   structs.TYPE_OUTLET,
-		Traits: []string{structs.TRAITS_ON_OFF},
-		Name: structs.DeviceName{
-			DefaultNames: []string{"Tomada 1"},
-			Name:         "Tomada 1",
-		},
-		WillReportState: false,
-		RoomHint:        "Quarto",
-		DeviceInfo:      manufacturer,
-		Attributes: map[string]interface{}{
-			"commandOnlyOnOff": true,
-		},
-		OtherDeviceIds: []map[string]interface{}{
-			{
-				"deviceId": "1",
+	/*
+		// Canal 1
+		device_1 := structs.Device{
+			Id:     "1",
+			Type:   structs.TYPE_OUTLET,
+			Traits: []string{structs.TRAITS_ON_OFF},
+			Name: structs.DeviceName{
+				DefaultNames: []string{"Tomada 1"},
+				Name:         "Tomada 1",
 			},
-		},
-	}
+			WillReportState: false,
+			RoomHint:        "Quarto",
+			DeviceInfo:      manufacturer,
+			Attributes: map[string]interface{}{
+				"commandOnlyOnOff": true,
+			},
+			OtherDeviceIds: []map[string]interface{}{
+				{
+					"deviceId": "1",
+				},
+			},
+		}
 
-	// Canal 2
-	device_2 := device_1.Copy("2", "Tomada 2")
+		// Canal 2
+		device_2 := device_1.Copy("2", "Tomada 2")
 
-	// Canal 3
-	device_3 := device_1.Copy("3", "Tomada 3")
+		// Canal 3
+		device_3 := device_1.Copy("3", "Tomada 3")
 
-	// Canal 4
-	device_4 := device_1.Copy("4", "Tomada 4")
+		// Canal 4
+		device_4 := device_1.Copy("4", "Tomada 4")
+	*/
 
 	// Termostato
 	device_5 := structs.Device{
@@ -75,10 +77,12 @@ func Sync(c *fiber.Ctx, requestId string) {
 
 	// Array com os dispositivos
 	devices := []structs.Device{
-		device_1,
-		device_2,
-		device_3,
-		device_4,
+		/*
+			device_1,
+			device_2,
+			device_3,
+			device_4,
+		*/
 		device_5,
 	}
 
